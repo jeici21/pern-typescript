@@ -10,7 +10,7 @@ import { createCardForDeckController } from "./controllers/createCardForDeckCont
 import { getDeckController } from "./controllers/getDeckController";
 // import { deleteCardOnDeckController } from "./controllers/deleteCardOnDeckController";
 import { updateDeckController } from "./controllers/updateDeckController";
-// import { updateCardOnDeckController } from "./controllers/updateCardOnDeckController";
+import { updateCardOnDeckController } from "./controllers/updateCardOnDeckController";
 
 config();
 const PORT = 5000;
@@ -32,7 +32,7 @@ app.put("/decks/:deckId", updateDeckController);
 app.delete('/decks/:deckId', deleteDeckController);
 app.get('/decks/:deckId', getDeckController);
 app.post("/decks/:deckId/cards", createCardForDeckController);
-// app.put("/decks/:deckId/cards/:index", updateCardOnDeckController(pool));
+app.put("/decks/:deckId/cards/:index", updateCardOnDeckController);
 // app.delete("/decks/:deckId/cards/:index", deleteCardOnDeckController(pool));
 
 pool.connect().then(() => {
