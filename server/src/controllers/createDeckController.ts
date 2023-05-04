@@ -8,8 +8,7 @@ export async function createDeckController(req: Request, res: Response) {
 
     try {
         const { rows } = await pool.query<TDeck>(query, [deck.title, deck.cards ?? []]);
-        const createdDeck = rows[0];
-        res.json(createdDeck);
+        res.json(rows[0]);
     } catch (err) {
         console.error(err);
         res.status(500).send("Error al crear un nuevo mazo");
