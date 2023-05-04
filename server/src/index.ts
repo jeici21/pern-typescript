@@ -9,7 +9,7 @@ import { createDeckController } from "./controllers/createDeckController";
 // import { createCardForDeckController } from "./controllers/createCardForDeckController";
 // import { getDeckController } from "./controllers/getDeckController";
 // import { deleteCardOnDeckController } from "./controllers/deleteCardOnDeckController";
-// import { updateDeckController } from "./controllers/updateDeckController";
+import { updateDeckController } from "./controllers/updateDeckController";
 // import { updateCardOnDeckController } from "./controllers/updateCardOnDeckController";
 
 config();
@@ -28,7 +28,7 @@ app.use(express.json());
 
 app.get('/decks', getDecksController);
 app.post("/decks", createDeckController);
-// app.put("/decks/:deckId", updateDeckController(pool));
+app.put("/decks/:deckId", updateDeckController);
 // app.delete('/decks/:deckId', deleteDeckController(pool));
 // app.get('/decks/:deckId', getDeckController(pool));
 // app.post("/decks/:deckId/cards", createCardForDeckController(pool));

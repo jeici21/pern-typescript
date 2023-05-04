@@ -1,2 +1,3 @@
-# express-ts-template
-A template of a backend application with Expressjs, Typescript and Nodemon included.
+# PERN Typescript
+
+A simple full-stack website made with the PERN stack, with Typescript and Nodemon included.

@@ -9,7 +9,7 @@ export async function createDeckController(req: Request, res: Response) {
     try {
         const { rows } = await pool.query<TDeck>(query, [deck.title, deck.cards ?? []]);
         res.json(rows[0]);
-    } catch (err) {
+    } catch (err: unknown) {
         console.error(err);
         res.status(500).send("Error al crear un nuevo mazo");
     }
