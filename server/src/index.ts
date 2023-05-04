@@ -8,7 +8,7 @@ import { createDeckController } from "./controllers/createDeckController";
 import { deleteDeckController } from "./controllers/deleteDeckController";
 import { createCardForDeckController } from "./controllers/createCardForDeckController";
 import { getDeckController } from "./controllers/getDeckController";
-// import { deleteCardOnDeckController } from "./controllers/deleteCardOnDeckController";
+import { deleteCardOnDeckController } from "./controllers/deleteCardOnDeckController";
 import { updateDeckController } from "./controllers/updateDeckController";
 import { updateCardOnDeckController } from "./controllers/updateCardOnDeckController";
 
@@ -33,7 +33,7 @@ app.delete('/decks/:deckId', deleteDeckController);
 app.get('/decks/:deckId', getDeckController);
 app.post("/decks/:deckId/cards", createCardForDeckController);
 app.put("/decks/:deckId/cards/:index", updateCardOnDeckController);
-// app.delete("/decks/:deckId/cards/:index", deleteCardOnDeckController(pool));
+app.delete("/decks/:deckId/cards/:index", deleteCardOnDeckController);
 
 pool.connect().then(() => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
