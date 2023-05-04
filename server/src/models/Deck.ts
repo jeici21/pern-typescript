@@ -5,6 +5,7 @@ export type Card = { text: string }
 
 export const createDeckTable = async () => {
     const client = await pool.connect();
+    
     try {
         await client.query(`
       CREATE TABLE IF NOT EXISTS Deck (
