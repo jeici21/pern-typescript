@@ -6,7 +6,7 @@ import { createDeckTable } from "./models/Deck";
 import { getDecksController } from "./controllers/getDecksController";
 import { createDeckController } from "./controllers/createDeckController";
 import { deleteDeckController } from "./controllers/deleteDeckController";
-// import { createCardForDeckController } from "./controllers/createCardForDeckController";
+import { createCardForDeckController } from "./controllers/createCardForDeckController";
 import { getDeckController } from "./controllers/getDeckController";
 // import { deleteCardOnDeckController } from "./controllers/deleteCardOnDeckController";
 import { updateDeckController } from "./controllers/updateDeckController";
@@ -31,7 +31,7 @@ app.post("/decks", createDeckController);
 app.put("/decks/:deckId", updateDeckController);
 app.delete('/decks/:deckId', deleteDeckController);
 app.get('/decks/:deckId', getDeckController);
-// app.post("/decks/:deckId/cards", createCardForDeckController(pool));
+app.post("/decks/:deckId/cards", createCardForDeckController);
 // app.put("/decks/:deckId/cards/:index", updateCardOnDeckController(pool));
 // app.delete("/decks/:deckId/cards/:index", deleteCardOnDeckController(pool));
 
