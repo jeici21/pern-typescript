@@ -22,6 +22,7 @@ const Deck = () => {
 
     async function handleUpdateCard(index: number) {
         if (!deckId) return
+        console.log(index);
         const text = prompt('Ingrese el nuevo título del deck')
         if (!text) return
         const newDeck = await updateCard(deckId, index, text)
@@ -30,6 +31,7 @@ const Deck = () => {
 
     async function handleDeleteCard(index: number) {
         if (!deckId) return
+        console.log(index);
         const newDeck = await deleteCard(deckId, index)
         setCards(newDeck.cards)
     }//borrando carta
