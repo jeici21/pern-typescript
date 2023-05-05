@@ -1,6 +1,6 @@
 import { pool } from "..";
 
-export type TDeck = { id: number, title: string, cards: string[] }
+export type TDeck = { title: string, cards: string[] }
 export type Card = { text: string }
 
 export const createDeckTable = async () => {
