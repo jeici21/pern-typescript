@@ -22,12 +22,12 @@ function App() {
     const title = prompt('Ingrese el nuevo título del deck')
     if (!title) return
     const updatedDeck = await updateDeck(deckId, title)
-    setDecks(decks.map(deck => (deck._id === updatedDeck[0]._id ? updatedDeck[0] : deck)))
+    setDecks(decks.map(deck => (deck.id === updatedDeck[0].id ? updatedDeck[0] : deck)))
   }//actualizando el deck correspondiente
 
   async function handleDeleteDeck(deckId: string) {
     await deleteDeck(deckId)
-    setDecks(decks.filter(deck => deck._id !== deckId))
+    setDecks(decks.filter(deck => deck.id !== deckId))
   }//borrando el deck correspondiente
 
   useEffect(() => {
@@ -44,10 +44,10 @@ function App() {
         <h1>Tus Decks</h1>
         <ul className='decks'>
           {decks.map(deck => (
-            <li key={deck._id}>
-              <button className='edit' onClick={() => handleUpdateDeck(deck._id)}>E</button>
-              <button className='delete' onClick={() => handleDeleteDeck(deck._id)}>X</button>
-              <Link to={`decks/${deck._id}`}>{deck.title}</Link>
+            <li key={deck.id}>
+              <button className='edit' onClick={() => handleUpdateDeck(deck.id)}>E</button>
+              <button className='delete' onClick={() => handleDeleteDeck(deck.id)}>X</button>
+              <Link to={`decks/${deck.id}`}>{deck.title}</Link>
             </li>
           ))}
         </ul>
