@@ -21,12 +21,12 @@ const Deck = () => {
     }//creando carta
 
     async function handleUpdateCard(index: number) {
-        if (!deckId) return;
-        const text = prompt('Ingrese el nuevo título del deck');
-        if (!text) return;
-        const { cards: updatedCards } = await updateCard(deckId, index, text);
-        setCards(updatedCards);
-    }
+        if (!deckId) return
+        const text = prompt('Ingrese el nuevo título del deck')
+        if (!text) return
+        const newDeck = await updateCard(deckId, index, text)
+        setCards(newDeck.cards)
+    }//actualizando carta
 
     async function handleDeleteCard(index: number) {
         if (!deckId) return
